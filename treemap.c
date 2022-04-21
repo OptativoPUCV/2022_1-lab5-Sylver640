@@ -180,7 +180,7 @@ Pair * nextTreeMap(TreeMap * tree) {
     if (aux->right != NULL)
     {
         aux = minimum(tree->current->right);
-        return aux;
+        return aux->pair;
     }
     return NULL;
 }
