@@ -166,6 +166,19 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 }
 
 Pair * upperBound(TreeMap * tree, void* key) {
+    TreeNode* ub_node = tree->root;
+    while (ub_node != NULL)
+    {
+        if (tree->lower_than(key, ub_node->pair->key) == 1)
+            ub_node = ub_node->left;
+        
+        else if (tree->lower_than(ub_node->pair->key, key) == 1)
+            ub_node = ub_node->right;
+        else
+        {
+            return ub_node->pair;
+        }
+    }
     return NULL;
 }
 
