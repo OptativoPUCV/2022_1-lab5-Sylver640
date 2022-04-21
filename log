@@ -15,3 +15,9 @@ treemap.c:40:14: error: unused variable 'new' [-Werror=unused-variable]
 cc1.exe: all warnings being treated as errors
 Compilation failed
 d0f6b4c
+Thu Apr 21 11:27:18 HSP 2022: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  2|8
+total_score: 0/70
+240ef45
