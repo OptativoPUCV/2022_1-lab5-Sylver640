@@ -113,3 +113,25 @@ Thu Apr 21 12:19:11 HSP 2022:
  tests:  15|4
 total_score: 25/70
 5d095c6
+Thu Apr 21 12:22:36 HSP 2022: 
+ treemap.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+In file included from test.c:4:0:
+treemap.c: In function 'removeNode':
+treemap.c:84:71: error: comparison between pointer and integer [-Werror]
+         if (tree->lower_than(node->pair->key, node->parent->pair->key == 1))
+                                                                       ^~
+treemap.c:84:47: error: passing argument 2 of 'tree->lower_than' makes pointer from integer without a cast [-Werror=int-conversion]
+         if (tree->lower_than(node->pair->key, node->parent->pair->key == 1))
+                                               ^~~~
+treemap.c:84:47: note: expected 'void *' but argument is of type 'int'
+treemap.c:86:71: error: comparison between pointer and integer [-Werror]
+         if (tree->lower_than(node->parent->pair->key, node->pair->key == 1))
+                                                                       ^~
+treemap.c:86:55: error: passing argument 2 of 'tree->lower_than' makes pointer from integer without a cast [-Werror=int-conversion]
+         if (tree->lower_than(node->parent->pair->key, node->pair->key == 1))
+                                                       ^~~~
+treemap.c:86:55: note: expected 'void *' but argument is of type 'int'
+cc1.exe: all warnings being treated as errors
+Compilation failed
+f2f966c
