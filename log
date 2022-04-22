@@ -508,3 +508,8 @@ treemap.c:175:13: note: ...this statement, but the latter is misleadingly indent
 cc1.exe: all warnings being treated as errors
 Compilation failed
 6246ca2
+Fri Apr 22 12:07:37 HSP 2022: 
+ treemap.c | 2 ++
+ 1 file changed, 2 insertions(+)
+ tests:  0|0
+a2dfac3
