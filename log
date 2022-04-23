@@ -598,3 +598,13 @@ Sat Apr 23 19:09:55 HSP 2022:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 8643573
+Sat Apr 23 19:12:30 HSP 2022: 
+ treemap.c | 6 +-----
+ 1 file changed, 1 insertion(+), 5 deletions(-)
+In file included from test.c:4:0:
+treemap.c: In function 'upperBound':
+treemap.c:194:60: error: invalid operands to binary - (have 'int' and 'void *')
+                 printf("key: %d\n", *(int*) auxUbNode->pair-key);
+                                     ~~~~~~~~~~~~~~~~~~~~~~~^
+Compilation failed
+2c77af7
