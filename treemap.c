@@ -190,7 +190,6 @@ Pair * upperBound(TreeMap * tree, void* key) {
                 auxUbNode = ubNode;
                 //auxUbNode = ubNode;
             }
-            else continue;
         }
         else
         {
