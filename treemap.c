@@ -180,9 +180,9 @@ Pair * upperBound(TreeMap * tree, void* key) {
             ubNode = ubNode->right;
             if (tree->lower_than(auxUbNode->pair->key, ubNode->pair->key) == 1)
             {
+                if (tree->lower_than(ubNode->pair->key, auxUbNode->pair->key) == 1) continue;
                 auxUbNode = ubNode;
             }
-            else continue;
         }
         else
         {
