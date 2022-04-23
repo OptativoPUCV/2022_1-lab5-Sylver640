@@ -166,34 +166,34 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 }
 
 Pair * upperBound(TreeMap * tree, void* key) {
-    TreeNode* ub_node = tree->root;
-    TreeNode* upper_ubNode = ub_node;
-    while (ub_node != NULL)
+    TreeNode* ubNode = tree->root;
+    TreeNode* auxUbNode = tree->root;
+    while (ubNode != NULL)
     {
-        if (tree->lower_than(key, ub_node->pair->key) == 1)
+        if (tree->lower_than(key, ubNode->pair->key) == 1)
         {
-            ub_node = ub_node->left;
-
+            ubNode = ubNode->left;
+            if (tree->lower_than(auxUbNode->pair->key, ubNode->pair->key) == 1)
+            {
+                auxUbNode = ubNode;
+            }
         }
         
-        else if (tree->lower_than(ub_node->pair->key, key) == 1)
+        else if (tree->lower_than(ubNode->pair->key, key) == 1)
         {
-            ub_node = ub_node->right;
-            if (tree->lower_than(upper_ubNode->pair->key, ub_node->pair->key) == 1)
+            ubNode = ubNode->right;
+            if (tree->lower_than(auxUbNode->pair->key, ubNode->pair->key) == 1)
             {
-                if (tree->lower_than(ub_node->pair->key, upper_ubNode->pair->key) == 1)
-                {
-                    upper_ubNode = ub_node;
-                    ub_node = upper_ubNode;
-                }
+                auxUbNode = ubNode;
             }
         }
         else
         {
-            return ub_node->pair;
+            return ubNode->pair;
         }
     }
-    return ub_node->pair;
+    ubNode = auxUbNode;
+    return ubNode->pair;
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
