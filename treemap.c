@@ -178,6 +178,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
                 if (tree->lower_than(ub_node->pair->key, upper_ubNode->pair->key) == 1)
                 {
                     upper_ubNode = ub_node;
+                    ub_node = upper_ubNode;
                 }
             }
         }
@@ -190,6 +191,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
                 if (tree->lower_than(ub_node->pair->key, upper_ubNode->pair->key) == 1)
                 {
                     upper_ubNode = ub_node;
+                    ub_node = upper_ubNode;
                 }
             }
         }
@@ -198,7 +200,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
             return ub_node->pair;
         }
     }
-    return upper_ubNode->pair;
+    return ub_node->pair;
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
