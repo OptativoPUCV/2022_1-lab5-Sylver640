@@ -186,9 +186,8 @@ Pair * upperBound(TreeMap * tree, void* key) {
 
             if (tree->lower_than(key, auxUbNode->pair->key) == 1)
             {
-                printf("key dentro de if = 0: %d\n", *(int*) auxUbNode->pair->key);
                 auxUbNode = ubNode;
-                //auxUbNode = ubNode;
+                printf("key dentro de if = 0: %d\n", *(int*) auxUbNode->pair->key);
             }
         }
         else
