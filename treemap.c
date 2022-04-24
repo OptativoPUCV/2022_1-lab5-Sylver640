@@ -182,9 +182,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
             ubNode = ubNode->right;
         }
         else
-        {
             return ubNode->pair;
-        }
     }
     ubNode = auxUbNode;
     return ubNode->pair;
