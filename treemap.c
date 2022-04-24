@@ -172,15 +172,16 @@ Pair * upperBound(TreeMap * tree, void* key) {
     {
         if (tree->lower_than(key, ubNode->pair->key) == 1)
         {
+            auxUbNode = ubNode;
             ubNode = ubNode->left;
         }
         
         else if (tree->lower_than(ubNode->pair->key, key) == 1)
         {
-            ubNode = ubNode->right;
             auxUbNode = ubNode;
+            ubNode = ubNode->right;
 
-            if (tree->lower_than(key, auxUbNode->pair->key) == 1)
+            if (tree->lower_than(key, ubNode->pair->key) == 1)
             {
                 auxUbNode = ubNode;
                 printf("key dentro de if = 0: %d\n", *(int*) auxUbNode->pair->key);
