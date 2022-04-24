@@ -178,15 +178,13 @@ Pair * upperBound(TreeMap * tree, void* key) {
         
         else if (tree->lower_than(ubNode->pair->key, key) == 1)
         {
-            auxUbNode = ubNode;
+            if (tree->lower_than(auxUbNode->pair->key, ubNode->pair->key) == 1)
+                auxUbNode = ubNode;
             ubNode = ubNode->right;
-            
         }
         else
             return ubNode->pair;
     }
-    if (auxUbNode == tree->root)
-        return NULL;
 
     return auxUbNode->pair;
 }
