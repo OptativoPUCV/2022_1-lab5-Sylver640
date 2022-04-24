@@ -185,7 +185,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
         else
             return ubNode->pair;
     }
-    if (auxUbNode ==  tree->root)
+    if (ubNode ==  NULL)
         return NULL;
 
     return auxUbNode->pair;
