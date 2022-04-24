@@ -180,18 +180,14 @@ Pair * upperBound(TreeMap * tree, void* key) {
         {
             auxUbNode = ubNode;
             ubNode = ubNode->right;
-
-            if (tree->lower_than(key, auxUbNode->pair->key) == 1)
-            {
-                auxUbNode = ubNode;
-                printf("key dentro de if = 0: %d\n", *(int*) auxUbNode->pair->key);
-            }
+            
         }
         else
             return ubNode->pair;
     }
     if (auxUbNode == tree->root)
         return NULL;
+
     return auxUbNode->pair;
 }
 
